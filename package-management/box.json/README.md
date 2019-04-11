@@ -30,48 +30,66 @@ Below you will see all the possible options that we currently support in Command
 
 ```javascript
 {
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#name
     "name" : "Package Name",
     // ForgeBox unique slug
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#slug
     "slug" : "",
     // semantic version of your package
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#version
     "version" : "1.0.0.buildID",
     // author of this package
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#author
     "author" : "Luis Majano <lmajano@ortussolutions.com>",
-    // location of where to download the package, overrides ForgeBox location
+    // location of where to download the package
+    // See https://commandbox.ortusbooks.com/package-management/box.json/package-urls#location
     "location" : "URL,Git/svn endpoint,etc",
     // install directory where this package should be placed once installed, if not
     // defined it then installs were the CommandBox command was executed.
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#directory
     "directory" : "",
     // This boolean bit determines if the container directory will contain a sub-directory according to
     // the package slug name, the default is true
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#createpackagedirectory
     "createPackageDirectory" : "boolean",
     // If this is set, then we will use this name for the package sub-directory, instead of the slug name
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#packagedirectory
     "packageDirectory" : ""
-    // project homepage URL 
+    // project homepage URL
+    // See https://commandbox.ortusbooks.com/package-management/box.json/package-urls#homepage
     "Homepage" : "URL",
     // documentation URL
     "Documentation" : "URL",
     // source repository, valid keys: type, URL 
+    // See https://commandbox.ortusbooks.com/package-management/box.json/package-urls#repository
     "Repository" : { 
         "type" : "git,svn,mercurial", "URL" : ""
     },
     // bug issue management URL
+    // See https://commandbox.ortusbooks.com/package-management/box.json/package-urls#bugs
     "Bugs" : "URL",
     // ForgeBox short description
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#shortdescription
     "shortDescription" : "short description",
     // ForgeBox big description, if not set it looks for a Readme.md, Readme, Readme.txt
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#description
     "description" : "",
     // Install instructions, if not set it looks for a instructions.md, instructions, instructions.txt
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#instructions
     "instructions" : "",
     // Change log, if not set, it looks for a changelog.md, changelog or changelog.txt
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#changelog
     "changelog" : ""
     // ForgeBox contribution type
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#type
     "type" : "1 from forgebox available types",
     // ForgeBox keywords, array of strings
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#keywords
     "keywords" : [ "groovy", "module" ],
     // Bit that designates the package as a private ForgeBox package.
     // Private packages are not publicly accessible, but still
     // offer all the benefits of ForgeBox.
+    // See https://commandbox.ortusbooks.com/package-management/box.json/basic-package-data#private
     "private" : "boolean",
     // cfml engines it supports, type and version
     "engines" : [
@@ -80,14 +98,18 @@ Below you will see all the possible options that we currently support in Command
         { "type" : "adobe", "version" : ">=10.0.0" }
     ],
      // default project URL if not using our start server commands
+     // See https://commandbox.ortusbooks.com/package-management/box.json/package-urls#projecturl
     "ProjectURL" : "http://railopresso.local/myApp",
     // license array of licenses it can have
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#license
     "License" : [
         { "type" : "MIT", "URL" : "" }
     ]
     // contributors array of strings or structs: name,email,url 
+    // See https://commandbox.ortusbooks.com/package-management/box.json/extended-package-data#contributors
     "Contributors" : [ "Luis Majano", "Luis Majano <lmajano@mail.com>", {name="luis majano", email="", url=""} ],
     // dependencies, a shortcut for latest version is to use the * string
+    // See https://commandbox.ortusbooks.com/package-management/box.json/dependencies#dependencies
     "Dependencies" : {
         "coldbox" : "x" // latest version from ForgeBox
         "slug" : "version", // a specific version from ForgeBox
@@ -96,18 +118,22 @@ Below you will see all the possible options that we currently support in Command
         "slug" : "Git/svn endpoint"
     },
     // only needed on development
+    // See https://commandbox.ortusbooks.com/package-management/box.json/dependencies#devdependencies
     "DevDependencies" : {
         // Same as above, but not installed in production
     },
     // Tracks install locations so uninstall can work.
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#installpaths
     "installPaths" : {
         "coldbox" : "coldbox" // relative to package root (no leading slash)
         "feeds" : "modules/feeds", // relative to package root (no leading slash)
         "Name" : "C:\\foo\\bar" // Outside root, so full path
     },
     // array of strings of files to ignore when installing the package similar to .gitignore pattern spec 
+    // See https://commandbox.ortusbooks.com/package-management/box.json/installation#installpaths
     "ignore" : [ "logs/*", "readme.md" ]
     // testbox integration
+    // See https://commandbox.ortusbooks.com/package-management/box.json/testbox
     "testbox" : {
         // the uri location of the test runner for is app or several with slug names
         "runner" : [
